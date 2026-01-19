@@ -3,18 +3,539 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ma LAB｜メディアアートと問いの実験場</title>
-  <meta name="description" content="Ma LABは、高校生によるメディアアートと問いの実験的プロジェクトです。" />
+  <title>声の行方 | メディアアート展示</title>
+  <meta name="description" content="声が光・音・映像へ変換され、空間を漂う。高校生チームが制作する体験型メディアアート展示「声の行方」。" />
 
-  <link rel="stylesheet" href="./style.css" />
-  <link rel="canonical" href="https://malab-ritsumori.netlify.app/" />
+  <!-- OGP (必要に応じて差し替え) -->
+  <meta property="og:title" content="声の行方 | メディアアート展示" />
+  <meta property="og:description" content="声が光・音・映像へ変換され、空間を漂う。体験型メディアアート展示「声の行方」。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/" />
+  <meta property="og:image" content="https://example.com/ogp.jpg" />
 
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <main class="wrap">
-    <h1>公開テスト</h1>
-    <p>GitHub → Netlify で自動デプロイ中。</p>
+  <a class="skip-link" href="#main">本文へスキップ</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="声の行方 トップへ">
+        <img class="brand-logo" src="images/icons/MaLAB_icon.png" alt="Ma LAB">
+        <span class="brand-text">声の行方</span>
+      </a>
+
+
+      <nav class="nav" aria-label="サイト内ナビゲーション">
+        <a href="#about">作品概要</a>
+        <a href="#info">展示情報</a>
+        <a href="#gallery">活動風景</a>
+        <a href="#support">支援</a>
+        <a href="#press">取材</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- YouTube -->
+        <a class="icon-link" href="https://www.youtube.com/@r.mediarts" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.5 6.2s-.2-1.6-.9-2.3c-.8-.9-1.7-.9-2.1-1C17.6 2.5 12 2.5 12 2.5s-5.6 0-8.5.4c-.4.1-1.3.1-2.1 1C.7 4.6.5 6.2.5 6.2S0 8.1 0 10v1.9c0 1.9.5 3.8.5 3.8s.2 1.6.9 2.3c.8.9 1.9.9 2.4 1 1.7.2 7.2.4 7.2.4s5.6 0 8.5-.4c.4-.1 1.3-.1 2.1-1 .7-.7.9-2.3.9-2.3s.5-1.9.5-3.8V10c0-1.9-.5-3.8-.5-3.8zM9.6 14.6V7.9l6.2 3.4-6.2 3.3z"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="icon-link" href="https://www.instagram.com/r.mediarts/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.4.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.5 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.5 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.4-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.5-2.4C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.9.5-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.5C8.4 2.2 8.8 2.2 12 2.2zm0 3.3a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13zm0 10.7a4.2 4.2 0 1 1 0-8.4 4.2 4.2 0 0 1 0 8.4zm6.7-10.9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+          </svg>
+        </a>
+
+        <!-- X -->
+        <a class="icon-link" href="https://x.com/r_mediaart" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.9 2H22l-7.1 8.1L23 22h-6.5l-5.1-6.6L5.6 22H2.5l7.6-8.7L1 2h6.7l4.6 6L18.9 2z"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- イントロ（最初に表示する黒背景の演出） -->
+    <section id="intro" class="intro" aria-label="イントロ演出">
+      <canvas id="introCanvas" class="intro-canvas" aria-hidden="true"></canvas>
+      <div id="commentLayer" class="comment-layer" aria-hidden="true"></div>
+
+      <!-- 任意：フィクション注記（見せたくなければ削除） -->
+      <p class="comment-disclaimer">※表示されるコメントは作品演出のサンプルです</p>
+
+      <div class="intro-center">
+        <!-- ここが2秒かけて立ち上がる「問い」 -->
+        <p class="intro-question intro-kaiso" id="introQuestion">
+          あなたの声は、どこへ向かうのか。
+        </p>
+
+
+
+        <div class="intro-hint" aria-hidden="true">
+          <span class="scroll-icon"></span>
+          <span>Scroll</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- トップ（ファーストビュー） -->
+    <section id="top" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="kicker">体験型メディアアート展示</p>
+
+          <h1 class="hero-title">声の行方</h1>
+
+          <p class="hero-lead">
+            あなたの声は、どこへ向かうのか。<br />
+            オンラインでは声が流れ、対面では人が集まらない。<br />
+            その「あいだ」を教室に立ち上げ、声が光・音・映像として漂う体験をつくる。
+          </p>
+
+          <div class="info-badges" aria-label="開催情報の要約">
+            <span class="badge">一次展示：2026/1/26–1/28（無料・予約不要）</span>
+            <span class="badge">二次展示：2026年3月中旬予定（一般公開・予約必要）</span>
+            <span class="badge">会場：立命館守山高等学校</span>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn primary" href="#info">展示情報を見る</a>
+            <a class="btn" href="https://camp-fire.jp/projects/916611/preview?token=25a5pq4c&utm_campaign=cp_po_share_c_msg_projects_show" target="_blank" rel="noopener noreferrer">
+              支援する（クラファン）
+            </a>
+            <a class="btn ghost" href="#press">取材・お問い合わせ</a>
+          </div>
+
+          <div class="social-row" aria-label="SNS導線">
+            <a href="https://youtube.com/@r.mediarts" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <a href="https://instagram.com/r.mediarts/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="https://x.com/r_mediaart" target="_blank" rel="noopener noreferrer">X</a>
+          </div>
+        </div>
+
+        <!-- <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card">
+            <div class="visual-placeholder">KEY VISUAL</div>
+            <div class="visual-meta">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="visual-card">
+            <img
+              src="images/key_visual/main_visual.png"
+              alt=""
+              class="visual-image"
+            />
+            <div class="visual-meta">
+              <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 作品概要 -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section-title">作品概要</h2>
+        <p class="section-lead">
+          SNSや話し合いの場で生まれる「声」が、行動につながらず流れていく違和感から生まれた作品。
+          来場者の声や言葉が、空間の光・音・映像として現れ、影響し合いながら消えていく。
+        </p>
+
+        <div class="grid two">
+          <div class="card">
+            <h3>何を体験できるか</h3>
+            <p>声が変換され、空間に漂う。誰かの声が誰かの行動を揺らすプロセスを身体で感じる。</p>
+          </div>
+          <div class="card">
+            <h3>この作品が目指すもの</h3>
+            <p>「声を出す」ことの価値を取り戻し、対話と共創のきっかけをつくる。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- なぜこの作品をつくるのか（背景） -->
+    <section id="background" class="section alt">
+      <div class="container">
+        <h2 class="section-title">なぜこの作品をつくるのか（背景）</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>オンライン</h3>
+            <p>意見は流れ、次の行動につながりにくい。</p>
+          </div>
+          <div class="card">
+            <h3>オフライン</h3>
+            <p>場をつくっても、人が集まりにくい。</p>
+          </div>
+          <div class="card">
+            <h3>だから</h3>
+            <p>その「あいだ」を作品として設計し、声が残る体験をつくる。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 体験内容（何が起きるか） -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">体験内容（何が起きるか）</h2>
+        <ol class="steps">
+          <li>
+            <h3>声が生まれる</h3>
+            <p>来場者が言葉を残す／発する。</p>
+          </li>
+          <li>
+            <h3>空間に変換される</h3>
+            <p>光・音・映像・文字として現れ、空間に漂う。</p>
+          </li>
+          <li>
+            <h3>影響し合う</h3>
+            <p>他者や空間に作用し、体験が変化する。</p>
+          </li>
+          <li>
+            <h3>消えていく</h3>
+            <p>「消える」ことで、逆に残るものを問い直す。</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 表現・技術 -->
+    <section id="tech" class="section alt">
+      <div class="container">
+        <h2 class="section-title">表現・技術</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>表現</h3>
+            <ul class="list">
+              <li>立体音響（複数スピーカー）</li>
+              <li>フルカラーLED（多数）</li>
+              <li>プロジェクション（空間演出）</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>連動</h3>
+            <ul class="list">
+              <li>カメラ追従による反応</li>
+              <li>声・文字データのリアルタイム変換</li>
+              <li>空間全体での「声のふるまい」設計</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 展示情報 -->
+    <section id="info" class="section">
+      <div class="container">
+        <h2 class="section-title">展示情報</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>一次展示（校内向け）</h3>
+            <dl class="dl">
+              <div><dt>期間</dt><dd>2026/1/26–1/28</dd></div>
+              <div><dt>会場</dt><dd>立命館守山高等学校</dd></div>
+              <div><dt>料金</dt><dd>無料</dd></div>
+              <div><dt>予約</dt><dd>不要</dd></div>
+            </dl>
+          </div>
+          <div class="card">
+            <h3>二次展示（一般公開）</h3>
+            <dl class="dl">
+              <div><dt>時期</dt><dd>2026年3月中旬予定</dd></div>
+              <div><dt>会場</dt><dd>立命館守山高等学校</dd></div>
+              <div><dt>料金</dt><dd>無料</dd></div>
+              <div><dt>予約</dt><dd>必要（詳細は後日公開）</dd></div>
+            </dl>
+            <a class="btn small" href="#" aria-disabled="true">予約ページ（準備中）</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- スケジュール -->
+    <section id="schedule" class="section alt">
+      <div class="container">
+        <h2 class="section-title">スケジュール</h2>
+        <ul class="timeline">
+          <li><span class="time">1月末</span><span class="desc">一次展示</span></li>
+          <li><span class="time">1/26–2/26</span><span class="desc">クラウドファンディング</span></li>
+          <li><span class="time">2月</span><span class="desc">制作強化・機材導入・改修</span></li>
+          <li><span class="time">3月中旬</span><span class="desc">二次展示（一般公開）</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 活動風景（ギャラリー） -->
+    <section id="gallery" class="section">
+      <div class="container">
+        <h2 class="section-title">活動風景（ギャラリー）</h2>
+
+        <div class="gallery">
+          <a class="thumb" href="images/gallery/gallery1.JPG" aria-label="活動写真 1">
+            <img src="images/gallery/gallery1.JPG" alt="活動風景 写真1">
+          </a>
+
+          <a class="thumb" href="images/gallery/gallery2.JPG" aria-label="活動写真 2">
+            <img src="images/gallery/gallery2.JPG" alt="活動風景 写真2">
+          </a>
+
+          <a class="thumb" href="images/gallery/gallery3.png" aria-label="活動写真 3">
+            <img src="images/gallery/gallery3.png" alt="活動風景 写真3">
+          </a>
+
+          <a class="thumb" href="images/gallery/gallery4.webp" aria-label="活動写真 4">
+            <img src="images/gallery/gallery4.webp" alt="活動風景 写真4">
+          </a>
+
+          <a class="thumb" href="images/gallery/gallery5.webp" aria-label="活動写真 5">
+            <img src="images/gallery/gallery5.webp" alt="活動風景 写真5">
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Blog / News（最新情報） -->
+    <section id="blog" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Blog / News（最新情報）</h2>
+
+        <div class="comingsoon">
+          <p class="comingsoon-title">Coming Soon</p>
+          <p class="comingsoon-text">
+            制作の裏側や展示準備の記録、<br>
+            展示期間中のレポートを順次公開予定です。
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- チーム -->
+    <section id="team" class="section">
+      <div class="container">
+        <h2 class="section-title">チーム</h2>
+        <p class="section-lead">
+          本プロジェクトは、高校生制作チーム「Ma LAB」のメンバーが、
+          それぞれの専門性を活かして制作している。
+        </p>
+
+        <!-- 集合写真 -->
+        <div class="team-hero">
+          <img src="images/team/team_photo.png" alt="Ma LAB メンバー集合写真" class="team-photo">
+        </div>
+
+        <!-- メンバー一覧 -->
+        <div class="member-grid">
+
+          <div class="member-card">
+            <h3 class="member-name">渡邉 幸大朗 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>プロジェクトリーダー</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">山瀬 心遥 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>広報</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">竹内 大翔 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>ソフトウェア</li>
+              <li>ハードウェア</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">西島 賢太朗 <span class="member-grade">（1年）</span></h3>
+            <ul class="member-roles">
+              <li>ソフトウェア</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">木村 叶大 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>空間デザイン</li>
+              <li>音響</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">丸飛雄 馬 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>ソフトウェア</li>
+              <li>ハードウェア</li>
+            </ul>
+          </div>
+
+          <div class="member-card">
+            <h3 class="member-name">長岡 優芽 <span class="member-grade">（3年）</span></h3>
+            <ul class="member-roles">
+              <li>音響</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- 支援（クラウドファンディング） -->
+    <section id="support" class="section alt">
+      <div class="container">
+        <h2 class="section-title">支援（クラウドファンディング）</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>支援をお願いする理由</h3>
+            <p>
+              一次展示は限られた環境の工夫で成立させています。二次展示では、体験の質を大きく引き上げます。
+            </p>
+          </div>
+          <div class="card">
+            <h3>使い道（例）</h3>
+            <ul class="list">
+              <li>音響・映像機材の強化</li>
+              <li>LED・制御基板・部材</li>
+              <li>制作費（設営資材・運搬等）</li>
+            </ul>
+            <a class="btn primary" href="https://camp-fire.jp/" target="_blank" rel="noopener noreferrer">クラファンページへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SNS / YouTube -->
+    <section id="sns" class="section">
+      <div class="container">
+        <h2 class="section-title">SNS / YouTube</h2>
+        <div class="grid three">
+          <div class="card">
+            <h3>YouTube</h3>
+            <p>制作過程・解説動画を公開。</p>
+            <a class="btn small" href="https://youtube.com/@r.mediarts" target="_blank" rel="noopener noreferrer">YouTubeへ</a>
+          </div>
+          <div class="card">
+            <h3>Instagram</h3>
+            <p>活動写真・リールで発信。</p>
+            <a class="btn small" href="https://instagram.com/r.mediarts" target="_blank" rel="noopener noreferrer">Instagramへ</a>
+          </div>
+          <div class="card">
+            <h3>X</h3>
+            <p>告知・リアルタイム更新。</p>
+            <a class="btn small" href="https://x.com/r_mediaart" target="_blank" rel="noopener noreferrer">Xへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 取材・お問い合わせ -->
+    <section id="press" class="section alt">
+      <div class="container">
+        <h2 class="section-title">取材・お問い合わせ</h2>
+        <div class="grid two">
+          <div class="card">
+            <h3>報道関係者の方へ</h3>
+            <p>取材のご相談、素材提供（画像/動画/テキスト）のご要望は下記よりご連絡ください。</p>
+          </div>
+          <div class="card">
+            <h3>連絡先</h3>
+            <dl class="dl">
+              <div><dt>Email</dt><dd><a href="r.mediarts@gmail.com">r.mediarts@gmail.com</a></dd></div>
+              <div><dt>担当</dt><dd>Ma LAB代表 渡邉</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- よくある質問 -->
+    <section id="faq" class="section">
+      <div class="container">
+        <h2 class="section-title">よくある質問</h2>
+        <div class="faq">
+          <details class="card">
+            <summary>予約は必要ですか？</summary>
+            <p>一次展示は不要、二次展示は必要（後日公開）です。</p>
+          </details>
+          <details class="card">
+            <summary>所要時間はどれくらいですか？</summary>
+            <p>目安：5〜15分（展示構成により調整）。</p>
+          </details>
+          <details class="card">
+            <summary>写真撮影は可能ですか？</summary>
+            <p>可否は会場ルールに従います。公開前にここを確定情報へ差し替えてください。</p>
+          </details>
+        </div>
+      </div>
+    </section>
   </main>
-  <script src="./main.js"></script>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand">声の行方</p>
+
+        <div class="footer-creator">
+          <p class="footer-note">制作</p>
+          <img
+            src="images/icons/MaLAB_icon.png"
+            alt="Ma LAB"
+            class="footer-logo"
+          />
+        </div>
+
+        <p class="footer-note">© <span id="year">2026</span> Ma LAB</p>
+      </div>
+
+
+
+      <div class="footer-right">
+        <div class="footer-links">
+          <a href="#about">作品概要</a>
+          <a href="#info">展示情報</a>
+          <a href="#support">支援</a>
+          <a href="#press">取材</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://youtube.com/@r.mediarts" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://instagram.com/r.mediarts" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://x.com/r_mediaart" target="_blank" rel="noopener noreferrer">X</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lightbox-close" aria-label="閉じる">✕</button>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    // 年だけ自動更新（不要なら削除OK）
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+  <script src="main.js"></script>
 </body>
 </html>
