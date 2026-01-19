@@ -499,3 +499,22 @@
     }
   });
 })();
+
+
+
+(() => {
+  const el = document.getElementById("introQuestion");
+  if (!el) return;
+
+  const show = () => {
+    el.classList.add("is-font-ready");
+  };
+
+  if (document.fonts && document.fonts.load) {
+    document.fonts.load('16px "KaisotaiUP"')
+      .then(show)
+      .catch(show);
+  } else {
+    show();
+  }
+})();

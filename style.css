@@ -197,18 +197,7 @@ img{ max-width: 100%; height: auto; }
   padding: 24px;
 }
 
-/* イントロの問い：Kaisotaiフォント */
-.intro-kaiso{
-  font-family: "KaisotaiUP", serif;
-  letter-spacing: .22em;
-  line-height: 1.25;
-  color: rgba(255,255,255,.95);
-
-  text-shadow:
-    0 2px 12px rgba(0,0,0,.65);
-}
-
-
+/* イントロの問い（共通） */
 .intro-question{
   margin: 0;
   text-align: center;
@@ -217,13 +206,18 @@ img{ max-width: 100%; height: auto; }
   position: relative;
   z-index: 2;
 
-  /* 2秒かけて立ち上がる */
+  /* 最初は表示しない */
   opacity: 0;
   transform: translateY(18px);
+}
+
+/* フォント読み込み完了後に表示＋アニメ */
+.intro-question.is-font-ready{
   animation: questionIn 2s ease forwards;
   animation-delay: 0.2s;
 }
 
+/* 文字の背後を暗くする */
 .intro-question::before{
   content: "";
   position: absolute;
@@ -238,6 +232,16 @@ img{ max-width: 100%; height: auto; }
   filter: blur(8px);
   z-index: -1;
 }
+
+/* イントロの問い：Kaisotaiフォント */
+.intro-kaiso{
+  font-family: "KaisotaiUP", serif;
+  letter-spacing: .22em;
+  line-height: 1.25;
+  color: rgba(255,255,255,.95);
+  text-shadow: 0 2px 12px rgba(0,0,0,.65);
+}
+
 
 @keyframes questionIn{
   to{
