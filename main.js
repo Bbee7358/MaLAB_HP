@@ -518,3 +518,21 @@
     show();
   }
 })();
+
+// ===== Supporters =====
+(() => {
+  const list = document.getElementById("supportersList");
+  if (!list) return;
+
+  const SUPPORTERS = [
+    "中野龍馬",
+    "Maverick"
+  ];
+
+  SUPPORTERS.forEach((name) => {
+    const item = document.createElement("span");
+    item.className = "supporter-item";
+    item.textContent = name;
+    list.appendChild(item);
+  });
+})();
