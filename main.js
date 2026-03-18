@@ -525,8 +525,10 @@
   if (!list) return;
 
   const SUPPORTERS = [
-    "中野龍馬",
-    "Maverick"
+    "中野 龍馬 様",
+    "Maverick 様",
+    "株式会社Namakofactorty 須崎　厚史 様",
+    "弁護士法人GRiT Partners法律事務所　弁護士　河原彬伸 様"
   ];
 
   SUPPORTERS.forEach((name) => {
